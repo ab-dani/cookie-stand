@@ -41,11 +41,11 @@
 
       let citySEAList = document.createElement("ol");
 
-      articleElement.appendChild(citySEAList);
+      article.appendChild(citySEAList);
 
       for(let i = 0; i < SEAhours.length;i++){
         let cookielist = document.createElement("li");
-        cookielist.innerText = `${SEAhourshours[i]}: ${this.avgCookiesPerSale[i]}`;
+        cookielist.innerText = `${SEAhours[i]}: ${this.avgCookiesPerSale[i]}`;
         citySEAList.appendChild(cookielist);
       }
 const cookielist = document.createElement("li");
@@ -132,8 +132,10 @@ Seattle.render()
     maxCustPerHour: 16,
     avgCookiesPerSale: 4.6,
     customersEachHour: [],
-    this:totalDailyCookiesL += oneHour,
-    calcCookiesEachHour: function() {
+    totalDailyCookiesL: oneHour,
+    calcCookiesEachHour: [],
+    
+    function() {
       for (let i =0; i < LIMAhours.length; i++){
         this.calcCustomersEachHour();
         const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerSale);
@@ -141,7 +143,9 @@ Seattle.render()
 
     }
 
-    Lima.calcCookiesEachHour();
+   
     }
 
-  }
+  };
+
+  Lima.calcCookiesEachHour();
