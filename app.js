@@ -43,9 +43,9 @@
 
       articleElement.appendChild(citySEAList);
 
-      for(let i = 0; i < hours.length;i++){
+      for(let i = 0; i < SEAhours.length;i++){
         let cookielist = document.createElement("li");
-        cookielist.innerText = `${hours[i]}: ${this.avgCookiesPerSale[i]}`;
+        cookielist.innerText = `${SEAhourshours[i]}: ${this.avgCookiesPerSale[i]}`;
         citySEAList.appendChild(cookielist);
       }
 const cookielist = document.createElement("li");
@@ -122,3 +122,25 @@ Seattle.render();
   };
 
   const LIMAhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm',]
+
+
+  const Lima =  {
+
+    locationName: 'Lima', 
+    minCustPerHour: 2,
+    maxCustPerHour: 16,
+    avgCookiesPerSale: 4.6,
+    customersEachHour: [],
+    this:totalDailyCookiesL += oneHour,
+    calcCookiesEachHour: function() {
+      for (let i =0; i < LIMAhours.length; i++){
+        this.calcCustomersEachHour();
+        const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerSale);
+        this.totalDailyCookies += oneHour;
+
+    }
+
+    Lima.calcCookiesEachHour();
+    }
+
+  }

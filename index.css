@@ -1,2 +1,33 @@
+body {
+    font-family: 'Alegreya', serif;
+    color: #43425F; /* Standard sans-serif web font color */
+    background-color: #BFB0FF; 
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    font-family: 'Nunito', sans-serif;
+    color: #43425F; /* Custom sans-serif font color */
+}
+p {
+    font-family: 'Alegreya', serif; /* Standard serif web font */
+}
+.box {
+    background-color: hsl(252, 42%, 65%); /* Background color for elements like boxes */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px;
+}
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+
 
 
