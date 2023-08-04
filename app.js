@@ -135,7 +135,7 @@ Seattle.render()
     maxCustPerHour: 16,
     avgCookiesPerSale: 4.6,
     customersEachHour: [],
-    totalDailyCookiesL: oneHour,
+    totalDailyCookiesL: 'oneHour',
     calcCookiesEachHour: [],
     
     function() {
