@@ -12,6 +12,7 @@
     maxCustPerHour: 65,
     avgCookiesPerSale: 6.3,
     customersEachHour: [],
+    cookiesPerHour:[],
     totalDailyCookies: 0, 
     calcCustomersEachHour: function() {
       this.customersEachHour.push(random(this.minCustPerHour, this.maxCustPerHour));
@@ -20,10 +21,42 @@
       for (let i = 0; i < SEAhours.length; i++) {
         this.calcCustomersEachHour();
         const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerSale);
+        this.cookiesPerHour.push(oneHour)
         this.totalDailyCookies += oneHour;
       }
+    },
+    render: function (){
+
+      this.calcCookiesEachHour();
+
+      console.log(this.calcCookiesEachHour);
+
+      let article = document.getElementById("citySEA");
+
+      let citySEA = document.createElement("h1");
+
+      citySEA.innerText = this.locationName;
+
+      articleElement.appendChild(citySEA);
+
+      let citySEAList = document.createElement("ol");
+
+      articleElement.appendChild(citySEAList);
+
+      for(let i = 0; i < hours.length;i++){
+        let cookielist = document.createElement("li");
+        cookielist.innerText = `${hours[i]}: ${this.avgCookiesPerSale[i]}`;
+        citySEAList.appendChild(cookielist);
+      }
+const cookielist = document.createElement("li");
+cookielist.textContent = "total: " + 
+this.totalDailyCookies + "cookies";
+citySEAList.appendChild(cookielist);
+
     }
   };
+Seattle.render();
+
 
   const TOKhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
