@@ -1,4 +1,4 @@
-function cookieConstruct('Seattle', 'locationName', 'minCustPerHour', 'maxCustPerHour', 'avgCookiesPerSale', 'customersEachHour', 'cookiesPerHour', 'totalDailyCookies'){ 
+/*function cookieConstruct('Seattle', 'locationName', 'minCustPerHour', 'maxCustPerHour', 'avgCookiesPerSale', 'customersEachHour', 'cookiesPerHour', 'totalDailyCookies'){ 
 
 this.locationName = locationName;
 this.minCustPerHour = minCustPerHour;
@@ -22,4 +22,4 @@ this.getLocationName = this.getLocationName(Seattle, Tokyo, Dubai, Paris,)
 }
 
 
-let SEAcity = 
+let SEAcity = */
