@@ -151,4 +151,4 @@ Seattle.render()
 
   };
 
-  Lima.calcCookiesEachHour();
+  Lima.render();
