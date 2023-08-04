@@ -125,55 +125,53 @@ Seattle.SEArender()
     }
   };
 
-  const LIMAhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm']
+  const LIMAhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm'];
 
+const Lima = {
+  locationName: 'Lima',
+  minCustPerHour: 2,
+  maxCustPerHour: 16,
+  avgCookiesPerSale: 4.6,
+  customersEachHour: [],
+  totalDailyCookies: 0,
 
-  const Lima =  {
-
-    locationName: 'Lima', 
-    minCustPerHour: 2,
-    maxCustPerHour: 16,
-    avgCookiesPerSale: 4.6,
-    customersEachHour: [],
-    totalDailyCookiesL: 0,
-    
-    calcCookiesEachHour: function() {
-      for (let i =0; i < LIMAhours.length; i++){
-        this.calcCustomersEachHour();
-        const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerSale);
-        this.totalDailyCookies += oneHour;
-
-    }
-    render: function (){
-
-      this.calcCookiesEachHour();
-
-      console.log(this.totalDailyCookiesa);
-
-      let article = document.getElementById("cityLIMA");
-
-      let cityLIMA = document.createElement("h1");
-
-      cityLIMAList.innerText = this.locationName;
-
-      article.appendChild(cityLIMA);
-
-      let cityLIMAList = document.createElement("ol");
-
-      article.appendChild(cityLIMAList);
-
-      for(let i = 0; i < SEAhours.length;i++){
-        let cookielist = document.createElement("li");
-        cookielist.innerText = `${SEAhours[i]}: ${this.avgCookiesPerSale[i]}`;
-        cityLIMAList.appendChild(cookielist);
-      }
-const cookielist = document.createElement("li");
-cookielist.textContent = "total: " + 
-this.totalDailyCookies + "cookies";
-cityLIMAList.appendChild(totalcookieList);
-   
-    }
-
+  calcCustomersEachHour: function() {
+    this.customersEachHour.push(random(this.minCustPerHour, this.maxCustPerHour));
   },
 
-  Lima.render();
+  calcCookiesEachHour: function() {
+    for (let i = 0; i < LIMAhours.length; i++) {
+      this.calcCustomersEachHour();
+      const oneHour = Math.ceil(this.customersEachHour[i] * this.avgCookiesPerSale);
+      this.totalDailyCookies += oneHour;
+    }
+  },
+
+  render: function () {
+    this.calcCookiesEachHour();
+
+    console.log(this.totalDailyCookies);
+
+    let article = document.getElementById("cityLIMA");
+
+    let cityLIMA = document.createElement("h1");
+    cityLIMA.innerText = this.locationName;
+    article.appendChild(cityLIMA);
+
+    let cityLIMAList = document.createElement("ol");
+    article.appendChild(cityLIMAList);
+
+    for (let i = 0; i < LIMAhours.length; i++) {
+      let cookielist = document.createElement("li");
+      cookielist.innerText = `${LIMAhours[i]}: ${this.avgCookiesPerSale}`;
+      cityLIMAList.appendChild(cookielist);
+    }
+
+    let totalCookiesList = document.createElement("li");
+    totalCookiesList.textContent = "Total: " + this.totalDailyCookies + " cookies";
+    cityLIMAList.appendChild(totalCookiesList);
+  }
+};
+
+Lima.render();
+
