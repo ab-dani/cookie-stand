@@ -41,7 +41,7 @@
 
       let citySEAList = document.createElement("ol");
 
-      Element.appendChild(citySEAList);
+      articleElement.appendChild(citySEAList);
 
       for(let i = 0; i < SEAhours.length;i++){
         let cookielist = document.createElement("li");
