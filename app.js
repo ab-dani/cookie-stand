@@ -82,3 +82,40 @@ console.log(seattle.cookiesPerHour);
 console.log(seattle.totalDailyCookies);
 
 
+const locations = [
+new CookieStand('Seattle',23, 65, 6.3),
+new CookieStand('Tokyo',24,1.2),
+new CookieStand('Dubai',38,3.7),  
+new CookieStand('Paris',38,2.3),
+new CookieStand('Lima',16,4.6),
+];
+
+function generateTable(){
+
+const table = document.createElement('table');
+const thead = document.createElement('thead');
+const tbody = document.createElement('tbody');
+
+// Header Row // 
+
+const headerRow = document.createElement('tr');
+const headerLocations = document.createElement('th');
+headerLocations.textContent = 'Locations';
+headerRow.appendChild(headerLocations);
+
+for(let i = 0; i < desiredNumberOfHours; i++) {
+
+const headerHour = document.createElement('th');
+headerHour.textContent = '$(i + 1)h';
+headerRow.appendChild(headerHour);
+}
+
+const headerTotal = document.createElement('th');
+headerTotal.textContent = 'Daily Location Total';
+headerRow.appendChild(headerTotal);
+
+
+
+}
+
+
