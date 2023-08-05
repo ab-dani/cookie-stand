@@ -141,5 +141,42 @@ bodyTotal.textContent = location.totalDailyCookies;
 bodyRow.appendChild(bodyTotal);
 tbody.appendChild(bodyRow); 
 
+}
+
+// Footer Row // 
+
+const footerRow = document.createElement('tr'); 
+const footerTotal = document.createElement('th');
+footerTotal.textContent = 'Totals'; 
+footerRow.appendChild(footerTotal); 
+
+let grandTotal = 0; 
+
+for (let i = 0; i < desiredNumberOfHours; i++){
+  let hourTotal = 0;
+  for(const location of locations){
+
+    hourTotal += location.cookiesPerHour[i];
+
+  }
+  grandTotal += hourTotal; 
+  const footerHour = document.createElement('td');
+  footerHour.textContent = hourTotal;
+  footerRow.appendChild(footerHour);
+}
+
+const footerGrandTotal = document.createElement('td');
+footerGrandTotal.textContent = grandTotal;
+footerRow.appendChild(footerGrandTotal);
+
+tbody.appendChild(footerRow);
+
+table.appendChild(thead);
+table.appendChild(tbody);
+
+document.getElementById('cookie-stand-table').appendChild(table);
 
 }
+
+
+generateTable();
