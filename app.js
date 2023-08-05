@@ -176,7 +176,7 @@ table.appendChild(tbody);
 
 document.getElementById('cookie-stand-table').appendChild(table);
 
-}
+
 
 
 generateTable();
