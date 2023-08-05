@@ -4,7 +4,7 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  const SEAhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+  /*const SEAhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
   const Seattle = {
     locationName: 'Seattle',
@@ -57,11 +57,25 @@ citySEAList.appendChild(cookielist);
    
   };
 Seattle.SEArender()
+*/
 
 
+function CookieConstruct( locationName, minCustPerHour, maxCustPerHour, avgCookiesPerSale){ 
+
+  this.locationName = locationName;
+  this.minCustPerHour = minCustPerHour;
+  this.maxCustPerHour = maxCustPerHour;
+  this.avgCookiesPerSale = avgCookiesPerSale;
+  this.totalDailyCookies = 0;
+  this.cookiesPerHour = [];
+  this.customersEachHour = [];
+  this.avgCookiesPerSale = [];
+  }
+
+const seattle = new CookieConstruct ('seattle', 23, 65, 6.3)
   const TOKhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
-  const Tokyo = {
+ /*const Tokyo = {
     locationName: 'Tokyo',
     minCustPerHour: 23,
     maxCustPerHour: 65,
@@ -192,3 +206,4 @@ const PARIhours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2
     }
 
   };
+*/
