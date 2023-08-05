@@ -80,3 +80,6 @@ const desiredNumberOfHours = 10;
 seattle.calcCookiesEachHour();
 console.log(seattle.cookiesPerHour);
 console.log(seattle.totalDailyCookies);
+
+
+document.getElementById("citySEA");
