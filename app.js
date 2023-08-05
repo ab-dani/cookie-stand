@@ -74,109 +74,93 @@ CookieConstruct.prototype.calcCustomersEachHour = function () {
   this.customersEachHour.push(this.random());
 }
 
-
-const seattle = new CookieConstruct('seattle', 23, 65, 6.3);
-const desiredNumberOfHours = 10; 
+const seattle = new CookieConstruct('Seattle', 23, 65, 6.3);
+const desiredNumberOfHours = 10;
 seattle.calcCookiesEachHour();
 console.log(seattle.cookiesPerHour);
 console.log(seattle.totalDailyCookies);
 
-
 const locations = [
-new CookieStand('Seattle',23, 65, 6.3),
-new CookieStand('Tokyo',24,1.2),
-new CookieStand('Dubai',38,3.7),  
-new CookieStand('Paris',38,2.3),
-new CookieStand('Lima',16,4.6),
+  new CookieConstruct('Seattle', 23, 65, 6.3),
+  new CookieConstruct('Tokyo', 3, 24, 1.2),
+  new CookieConstruct('Dubai', 11, 38, 3.7),
+  new CookieConstruct('Paris', 20, 38, 2.3),
+  new CookieConstruct('Lima', 2, 16, 4.6),
 ];
 
-function generateTable(){
+function generateTable() {
 
-const table = document.createElement('table');
-const thead = document.createElement('thead');
-const tbody = document.createElement('tbody');
+  const table = document.createElement('table');
+  const thead = document.createElement('thead');
+  const tbody = document.createElement('tbody');
 
-// Header Row // 
+  // Header Row
+  const headerRow = document.createElement('tr');
+  const headerLocations = document.createElement('th');
+  headerLocations.textContent = 'Locations';
+  headerRow.appendChild(headerLocations);
 
-const headerRow = document.createElement('tr');
-const headerLocations = document.createElement('th');
-headerLocations.textContent = 'Locations';
-headerRow.appendChild(headerLocations);
-
-for(let i = 0; i < desiredNumberOfHours; i++) {
-
-const headerHour = document.createElement('th');
-headerHour.textContent = '$(i + 1)h';
-headerRow.appendChild(headerHour);
-}
-
-const headerTotal = document.createElement('th');
-headerTotal.textContent = 'Daily Location Total';
-headerRow.appendChild(headerTotal);
-thead.appendChild(headerRow);
-
-}
-
-
-// Body Rows 
-
-
-for (const location of locations) {
-
-  const bodyRow = document.createElement('tr'); 
-  const bodyLocation = document.createElement('td'); 
-  bodyLocation.textContent = location.locationName;
-  bodyRow.appendChild(bodyLocation);
-
-  location.calcCookiesEachHour();
-
-  for (const cookies of location.cookiesPerHour){
-
-    const bodyCookies = document.createElement('td');
-    bodyCookies.textContent = cookies;
-    bodyRow.appendChild(bodyCookies);
+  for (let i = 0; i < desiredNumberOfHours; i++) {
+    const headerHour = document.createElement('th');
+    headerHour.textContent = `${i + 1}h`;
+    headerRow.appendChild(headerHour);
   }
-const bodyTotal = document.createElement('td');
-bodyTotal.textContent = location.totalDailyCookies;
-bodyRow.appendChild(bodyTotal);
-tbody.appendChild(bodyRow); 
 
-}
+  const headerTotal = document.createElement('th');
+  headerTotal.textContent = 'Daily Location Total';
+  headerRow.appendChild(headerTotal);
+  thead.appendChild(headerRow);
 
-// Footer Row // 
+  // Body Rows
+  for (const location of locations) {
+    const bodyRow = document.createElement('tr');
+    const bodyLocation = document.createElement('td');
+    bodyLocation.textContent = location.locationName;
+    bodyRow.appendChild(bodyLocation);
 
-const footerRow = document.createElement('tr'); 
-const footerTotal = document.createElement('th');
-footerTotal.textContent = 'Totals'; 
-footerRow.appendChild(footerTotal); 
+    location.calcCookiesEachHour();
 
-let grandTotal = 0; 
+    for (const cookies of location.cookiesPerHour) {
+      const bodyCookies = document.createElement('td');
+      bodyCookies.textContent = cookies;
+      bodyRow.appendChild(bodyCookies);
+    }
 
-for (let i = 0; i < desiredNumberOfHours; i++){
-  let hourTotal = 0;
-  for(const location of locations){
-
-    hourTotal += location.cookiesPerHour[i];
-
+    const bodyTotal = document.createElement('td');
+    bodyTotal.textContent = location.totalDailyCookies;
+    bodyRow.appendChild(bodyTotal);
+    tbody.appendChild(bodyRow);
   }
-  grandTotal += hourTotal; 
-  const footerHour = document.createElement('td');
-  footerHour.textContent = hourTotal;
-  footerRow.appendChild(footerHour);
+
+  // Footer Row
+  const footerRow = document.createElement('tr');
+  const footerTotal = document.createElement('th');
+  footerTotal.textContent = 'Totals';
+  footerRow.appendChild(footerTotal);
+
+  let grandTotal = 0;
+
+  for (let i = 0; i < desiredNumberOfHours; i++) {
+    let hourTotal = 0;
+    for (const location of locations) {
+      hourTotal += location.cookiesPerHour[i];
+    }
+    grandTotal += hourTotal;
+    const footerHour = document.createElement('td');
+    footerHour.textContent = hourTotal;
+    footerRow.appendChild(footerHour);
+  }
+
+  const footerGrandTotal = document.createElement('td');
+  footerGrandTotal.textContent = grandTotal;
+  footerRow.appendChild(footerGrandTotal);
+
+  tbody.appendChild(footerRow);
+
+  table.appendChild(thead);
+  table.appendChild(tbody);
+
+  document.getElementById('cookie-stand-table').appendChild(table);
 }
-
-const footerGrandTotal = document.createElement('td');
-footerGrandTotal.textContent = grandTotal;
-footerRow.appendChild(footerGrandTotal);
-
-tbody.appendChild(footerRow);
-
-table.appendChild(thead);
-table.appendChild(tbody);
-
-document.getElementById('cookie-stand-table').appendChild(table);
-
-
-
 
 generateTable();
