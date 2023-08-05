@@ -83,11 +83,11 @@ console.log(seattle.totalDailyCookies);
 
 
 const locations = [
-new CookieStandSEA('Seattle',23, 65, 6.3),
-new CookieStandTOK('Tokyo',24,1.2),
-new CookieStandDUBI('Dubai',38,3.7),  
-new CookieStandPARI('Paris',38,2.3),
-new CookieStandLIMA('Lima',16,4.6),
+new CookieStand('Seattle',23, 65, 6.3),
+new CookieStand('Tokyo',24,1.2),
+new CookieStand('Dubai',38,3.7),  
+new CookieStand('Paris',38,2.3),
+new CookieStand('Lima',16,4.6),
 ];
 
 function generateTable(){
