@@ -94,7 +94,7 @@ function generateTable() {
   const thead = document.createElement('thead');
   const tbody = document.createElement('tbody');
 
-  // Header Row
+
   const headerRow = document.createElement('tr');
   const headerLocations = document.createElement('th');
   headerLocations.textContent = 'Locations';
@@ -111,7 +111,7 @@ function generateTable() {
   headerRow.appendChild(headerTotal);
   thead.appendChild(headerRow);
 
-  // Body Rows
+  
   for (const location of locations) {
     const bodyRow = document.createElement('tr');
     const bodyLocation = document.createElement('td');
@@ -132,7 +132,7 @@ function generateTable() {
     tbody.appendChild(bodyRow);
   }
 
-  // Footer Row
+
   const footerRow = document.createElement('tr');
   const footerTotal = document.createElement('th');
   footerTotal.textContent = 'Totals';
