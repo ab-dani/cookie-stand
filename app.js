@@ -130,6 +130,16 @@ for (const location of locations) {
 
   location.calcCookiesEachHour();
 
+  for (const cookies of location.cookiesPerHour){
+
+    const bodyCookies = document.createElement('td');
+    bodyCookies.textContent = cookies;
+    bodyRow.appendChild(bodyCookies);
+  }
+const bodyTotal = document.createElement('td');
+bodyTotal.textContent = location.totalDailyCookies;
+bodyRow.appendChild(bodyTotal);
+tbody.appendChild(bodyRow); 
 
 
 }
