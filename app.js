@@ -82,4 +82,3 @@ console.log(seattle.cookiesPerHour);
 console.log(seattle.totalDailyCookies);
 
 
-document.getElementById("citySEA");
