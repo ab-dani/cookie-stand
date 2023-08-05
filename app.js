@@ -113,6 +113,8 @@ headerRow.appendChild(headerHour);
 const headerTotal = document.createElement('th');
 headerTotal.textContent = 'Daily Location Total';
 headerRow.appendChild(headerTotal);
+thead.appendChild(headerRow);
+
 
 
 
