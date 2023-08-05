@@ -115,9 +115,21 @@ headerTotal.textContent = 'Daily Location Total';
 headerRow.appendChild(headerTotal);
 thead.appendChild(headerRow);
 
+}
+
+
+// Body Rows 
+
+
+for (const location of locations) {
+
+  const bodyRow = document.createElement('tr'); 
+  const bodyLocation = document.createElement('td'); 
+  bodyLocation.textContent = location.locationName;
+  bodyRow.appendChild(bodyLocation);
+
+  location.calcCookiesEachHour();
 
 
 
 }
-
-
