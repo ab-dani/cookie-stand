@@ -1,22 +1,37 @@
 body {
     font-family: 'Alegreya', serif;
-    color: #43425F; /* Standard sans-serif web font color */
+    color: #43425F; 
     background-color: #BFB0FF; 
-    margin: 0;
-    padding: 0;
+    margin: 180px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
-h1, h2, h3 {
+ h1 ,p, h3 {
     font-family: 'Nunito', sans-serif;
-    color: #43425F; /* Custom sans-serif font color */
+    color: #43425F;
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    justify-content: flex-start;
+    margin: 20px;
+   
+
 }
-p {
-    font-family: 'Alegreya', serif; /* Standard serif web font */
-}
+
 .box {
-    background-color: hsl(252, 42%, 65%); /* Background color for elements like boxes */
-    padding: 10px;
+    background-color: hsl(252, 42%, 65%); 
     margin: 10px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+   
+    
+   
 }
 table {
     width: 100%;
@@ -28,6 +43,19 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
+img {
+    width: 50%;
+    display: flex;
+    justify-self: flex-end;
+    padding: 30px;
+
+    }
+
+
+h1 {
+    display: flex;
+    align-self: flex-start;
+}
 
 
 
