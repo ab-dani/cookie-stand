@@ -2,7 +2,7 @@ document.getElementById('cookieStandForm').addEventListener('submit', function (
     event.preventDefault();
 
     const location = document.getElementById('location').value;
-    const minCustomers = parseInt(document.getElementById('minCustomers').value); // Use 'minCustomers' input for minCustomers
+    const minCustomers = parseInt(document.getElementById('minCustomers').value); 
     const maxCustomers = parseInt(document.getElementById('maxCustomers').value);
     const avgCookies = parseFloat(document.getElementById('avgCookies').value);
 
