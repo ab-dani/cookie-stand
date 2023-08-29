@@ -5,63 +5,7 @@
     <title>Cookie Store</title>
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Nunito?category=Sans+Serif">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Alegreya?category=Serif">
-    <style>
-        body {
-            font-family: 'Alegreya', serif;
-            color: #43425F; 
-            background-color: #BFB0FF; 
-            margin: 0;
-            padding: 0;
-        }
-        h1, h2, h3 {
-            font-family: 'Nunito', sans-serif;
-            color: #43425F; 
-        }
-        p {
-            font-family: 'Alegreya', serif;
-        }
-        .box {
-    
-            background-color: hsl(252, 42%, 65%); 
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-
-        .box0 {
-            
-            background-color: hsl(252, 42%, 65%); 
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-
-
-        .box1 {
-            background-color: hsl(252, 42%, 65%); 
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-
-
-        .box2{
-
-            background-color: hsl(252, 42%, 65%); 
-            padding: 10px;
-            margin: 10px;
-            border-radius: 5px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px;
-        }
-        th, td {
-            padding: 8px;
-            border-bottom: 1px solid #ddd;
-        }
-    </style>
+   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
@@ -90,11 +34,32 @@
         <h1>Sales Data</h1>
         <div id="cookie-stand-table">
             <article id="citySEA"></article>
-            <article id="cityTOR"></article>
+            <article id="cityTOR"></article> 
             <article id="cityDUBI"></article>
             <article id="cityPARI"></article>
             <article id="cityLIMA"></article>
         </div>
+        <form  id="newCity">
+            
+            <label>
+                City
+                <input type="text" name="cityName">
+            </label>
+
+            <label>
+                Minimal Customers
+                <input type="number" name="cityMinNum">
+            </label>
+            <label>
+                Maximum Customers
+                <input type="number" name="cityMaxNum">
+            </label>
+            <label>
+                Average Customers
+                <input type="number" name="cityAvgCust" step="0.1">
+            </label>
+                <button type="submit">Submit Data</button>
+        </form>
 </body>
 <script src="app.js"></script>
 </html>
